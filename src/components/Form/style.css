@@ -1,0 +1,8 @@
+.form * {
+  font-size: 25px;
+  margin: 3px;
+  padding: 3px 8px 3px 8px;
+}
+.form {
+  margin: 10px;
+}

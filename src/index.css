@@ -1,12 +1,17 @@
 body {
   background-color: #eee;
   font-size: 30px;
+  color: cornflowerblue;
+  margin: 15px;
+  max-width: 700px;
 }
-.note {
-  font-size: 20px;
-  background-color: #666;
-  margin: 8px;
+.notes {
+  background-color: #d8d8d8;
   border-radius: 2px;
-  padding: 5px;
-  color: #eee;
+  text-align: center;
+  padding: 10px;
+}
+.notesTitle {
+  color: #666;
+  font-size: 20px;
 }
