@@ -1,4 +1,5 @@
 import React from "react"
+import "./style.css"
 
 function Note(props) {
 
@@ -7,6 +8,7 @@ function Note(props) {
   return (
     <div className="note">
       <span> {props.fromParent} </span>
+      <button className="remove-btn" onClick={()=>props.deleteNote(props.id)}>✕</button>
     </div>
   )
 
