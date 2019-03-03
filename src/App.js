@@ -23,7 +23,7 @@ function App() {
       <div style={someData.titleStyle}>{someData.title}</div>
       <h2 className="heading"> Child components: </h2>
       {someData.messageToChildren.map( (message, i) => (
-        <Note fromParent={message} indexNum={i+1}/>
+        <Note fromParent={message} indexNum={i+1} key={i}/>
       ))}
     </div>
   )
