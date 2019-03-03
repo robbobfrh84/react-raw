@@ -1,5 +1,5 @@
 # react-raw
-Stripped-down create react app with step by step build-outs. 
+Stripped-down React app with step by step build-outs. 
 
 ----
 # Getting Started: Minimal Basic React App
