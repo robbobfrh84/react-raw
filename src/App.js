@@ -1,17 +1,22 @@
 import React from "react"
+import Note from "./components/Note.js"
 
 function App() {
 
   const someData = {
     title: "Hello React App!",
-    subTitle: "This is an example of a React App using localized data to populate html tags."
+    messageToChildren: [
+      " 🌟 Good luck out there my child 🥰 ",
+      "...Oh, I guess you too 😕 ..."
+    ]
   }
 
   return (
     <div>
       <h1>{someData.title}</h1>
-      <p>{someData.subTitle}</p>
-      <div> ... But, you can just write text content like normal too. </div>
+      <h2>Child components:</h2>
+      <Note fromParent={someData.messageToChildren[0]}/>
+      <Note fromParent={someData.messageToChildren[1]}/>
     </div>
   )
 
