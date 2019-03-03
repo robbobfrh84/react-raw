@@ -2,9 +2,9 @@ import React from "react"
 import Note from "./components/Note.js"
 import "./index.css"
 
-function App() {
+class App extends React.Component {
 
-  const someData = {
+  state = {
     title: "Hello React App!",
     messageToChildren: [
       " 🌟 Good luck out there my child 🥰 ",
@@ -18,15 +18,17 @@ function App() {
     }
   }
 
-  return (
-    <div>
-      <div style={someData.titleStyle}>{someData.title}</div>
-      <h2 className="heading"> Child components: </h2>
-      {someData.messageToChildren.map( (message, i) => (
-        <Note fromParent={message} indexNum={i+1}/>
-      ))}
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <div style={this.state.titleStyle}>{this.state.title}</div>
+        <h2 className="heading"> Child components: </h2>
+        {this.state.messageToChildren.map( (message, i) => (
+          <Note fromParent={message} indexNum={i+1} key={i}/>
+        ))}
+      </div>
+    )
+  }
 
 }
 
