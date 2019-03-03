@@ -1,4 +1,8 @@
-# Steps to create basic react app
+# react-raw
+Stripped-down React app with step by step build-outs.
+
+----
+# Getting Started: Minimal Basic React App
 
 First, create a project folder and then add these files and folders within.
 - Create folder `/public` within your project folder
@@ -86,4 +90,8 @@ Your `package.json` should now look similar to the code below.
 - You may get this alert `? We're unable to detect target browsers.`
   - Just type `y` + [enter] for the detected browser.
 
-If your react app was created successfully, your browser should load the basic raw content added within the code from above. 
+If your react app was created successfully, your browser should load the basic raw content added within the code from above.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ed816146258602ae4d56a35529b5eb937004b6b
