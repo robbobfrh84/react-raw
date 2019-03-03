@@ -91,7 +91,3 @@ Your `package.json` should now look similar to the code below.
   - Just type `y` + [enter] for the detected browser.
 
 If your react app was created successfully, your browser should load the basic raw content added within the code from above.
-<<<<<<< HEAD
-=======
-
->>>>>>> 4ed816146258602ae4d56a35529b5eb937004b6b
