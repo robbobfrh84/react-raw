@@ -1,0 +1,15 @@
+body {
+  background-color: #eee;
+}
+.heading {
+  text-align: center;
+  color: #444;
+}
+.note {
+  font-size: 20px;
+  background-color: #666;
+  margin: 8px;
+  border-radius: 2px;
+  padding: 5px;
+  color: #eee;
+}
