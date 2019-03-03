@@ -8,7 +8,7 @@ function App() {
     messageToChildren: [
       " 🌟 Good luck out there my child 🥰 ",
       "...Oh, I guess you too 😕 ...",
-      "...Wait, I have another child 😳? ..."
+      "...Wait, I have another child 😳 !? ..."
     ]
   }
 
