@@ -1,2 +1,2 @@
 # react-raw
-Stripped-down react app with step by step build-outs. 
+Stripped-down React app with step by step build-outs. 
