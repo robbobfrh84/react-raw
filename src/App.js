@@ -7,7 +7,8 @@ function App() {
     title: "Hello React App!",
     messageToChildren: [
       " 🌟 Good luck out there my child 🥰 ",
-      "...Oh, I guess you too 😕 ..."
+      "...Oh, I guess you too 😕 ...",
+      "...Wait, I have another child 😳? ..."
     ]
   }
 
@@ -15,8 +16,9 @@ function App() {
     <div>
       <h1>{someData.title}</h1>
       <h2>Child components:</h2>
-      <Note fromParent={someData.messageToChildren[0]}/>
-      <Note fromParent={someData.messageToChildren[1]}/>
+      {someData.messageToChildren.map( (message, i) => (
+        <Note fromParent={message} indexNum={i+1}/>
+      ))}
     </div>
   )
 
