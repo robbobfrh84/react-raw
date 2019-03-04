@@ -3,7 +3,7 @@ import React from "react"
 class Form extends React.Component {
 
   state = {
-    input: "",
+    input: this.props.currentMessage,
     autoFocus: true
   }
 
@@ -18,6 +18,22 @@ class Form extends React.Component {
     this.messageInput.focus()
   }
 
+  handleUpdateSave = event => {
+    event.preventDefault()
+    this.props.saveMessage(this.state.input)
+    this.setState({ input: "" })
+    this.messageInput.focus()
+  }
+
+  handleCancelUpdateMessage = event => {
+    event.preventDefault()
+    this.props.cancelUpdateMessage()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({input: nextProps.currentMessage})
+  }
+
   render() {
     return (
       <div className="form">
@@ -30,7 +46,23 @@ class Form extends React.Component {
             autoFocus={this.state.autoFocus}
             ref={ elm => this.messageInput = elm }
           />
-          <button onClick={this.handleInputSubmit}> Submit </button>
+          {this.props.edit === "new" &&
+            <button onClick={this.handleInputSubmit}>
+              Submit
+            </button>
+          }
+          {this.props.edit !== "new" &&
+            <div>
+              <button onClick={this.handleUpdateSave}>
+                {"💾"} Save
+              </button>
+              <button
+                onClick={this.handleCancelUpdateMessage}
+                className="cancel-btn"
+              >Cancel</button>
+            </div>
+          }
+
         </form>
       </div>
     )

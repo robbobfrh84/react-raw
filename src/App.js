@@ -12,6 +12,8 @@ class App extends React.Component {
       "...Oh, I guess you too 😕 ...",
       "...Wait, I have another child 😳? ..."
     ],
+    currentMessage: "",
+    edit: "new",
     titleStyle: {
       color: "cornflowerblue",
       margin: 15,
@@ -19,9 +21,9 @@ class App extends React.Component {
     }
   }
 
-  addMessage = (row) => {
+  addMessage = (message) => {
     const arr = [...this.state.messageToChildren]
-    arr.push(row)
+    arr.push(message)
     this.setState({ messageToChildren: arr })
   }
 
@@ -31,12 +33,32 @@ class App extends React.Component {
     this.setState({ messageToChildren: arr })
   }
 
+  updateMessage = (index, message) => {
+    this.setState({ edit: index, currentMessage: message })
+  }
+
+  cancelUpdateMessage = () => {
+    this.setState({ edit: "new", currentMessage: "" })
+  }
+
+  saveMessage = (updatedMessage) => {
+    const arr = [...this.state.messageToChildren]
+    arr[this.state.edit] = updatedMessage
+    this.setState({ messageToChildren: arr, edit: "new", currentMessage: ""  })
+  }
+
   render() {
     return (
       <div>
         <div style={this.state.titleStyle}>{this.state.title}</div>
 
-        <Form addMessage={this.addMessage} />
+        <Form
+          addMessage={this.addMessage}
+          currentMessage={this.state.currentMessage}
+          cancelUpdateMessage={this.cancelUpdateMessage}
+          saveMessage={this.saveMessage}
+          edit={this.state.edit}
+        />
 
         <h2 className="heading"> Child components: </h2>
 
@@ -46,6 +68,9 @@ class App extends React.Component {
             index={i}
             key={i}
             deleteMessage={this.deleteMessage}
+            updateMessage={this.updateMessage}
+            saveMessage={this.saveMessage}
+            edit={this.state.edit}
           />
         ))}
 
