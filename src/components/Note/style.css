@@ -1,13 +1,3 @@
-body {
-  background-color: #eee;
-  max-width: 700px;
-}
-.heading {
-  text-align: center;
-  color: #444;
-}
-
-
 .note {
   position: relative;
   left: 0px;
@@ -21,16 +11,16 @@ body {
   height: 30px;
   line-height: 30px;
 }
-.active {
+.note .active {
   border: 4px solid brown;
   opacity: 0.35;
 }
-.container-btn {
+.note .container-btn {
   position: absolute;
   top: 5px;
   right: 5px;
 }
-.btn {
+.note .btn {
   color: brown;
   font-size: 25px;
   background-color: #888;
@@ -40,31 +30,15 @@ body {
   border-radius: 2px;
   border: none;
 }
-.btn:hover {
+.note .btn:hover {
   background-color: #aaa;
   cursor: pointer;
 }
-.remove-btn {
+.note .remove-btn {
   float: right;
 }
-.update-btn, .save-btn {
+.note .update-btn {
   position: absolute;
   right: 40px;
   color: #bbb;
-}
-
-
-.form * {
-  font-size: 25px;
-  margin: 3px;
-  padding: 3px 8px 3px 8px;
-}
-.form {
-  margin: 10px;
-}
-.form input {
-  width: 500px;
-}
-.cancel-btn {
-  line-height: 32px;
 }

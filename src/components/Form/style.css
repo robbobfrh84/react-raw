@@ -1,0 +1,14 @@
+.form * {
+  font-size: 25px;
+  margin: 3px;
+  padding: 3px 8px 3px 8px;
+}
+.form {
+  margin: 10px;
+}
+.form input {
+  width: 500px;
+}
+.form .cancel-btn {
+  line-height: 32px;
+}

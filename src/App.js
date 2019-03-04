@@ -1,7 +1,7 @@
 import React from "react"
-import Note from "./components/Note.js"
-import Form from "./components/Form.js"
-import "./index.css"
+import Note from "./components/Note"
+import Form from "./components/Form"
+import "./style.css"
 
 class App extends React.Component {
 
