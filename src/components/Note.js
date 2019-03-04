@@ -13,10 +13,11 @@ function Note(props) {
 
   return (
     <div className="note">
-      <span>
-        <span style={style}> Message from parent: </span>
-        <span> "{props.fromParent}" </span>
-      </span>
+      <span style={style}> Message from parent: </span>
+      <span> "{props.fromParent}" </span>
+      <button className="remove-btn"
+        onClick={()=>props.deleteMessage(props.index)}
+      >✕</button>
     </div>
   )
 
