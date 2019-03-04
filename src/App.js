@@ -25,6 +25,12 @@ class App extends React.Component {
     this.setState({ messageToChildren: arr })
   }
 
+  deleteMessage = (index) => {
+    const arr = [...this.state.messageToChildren]
+    arr.splice(index, 1)
+    this.setState({ messageToChildren: arr })
+  }
+
   render() {
     return (
       <div>
@@ -33,9 +39,14 @@ class App extends React.Component {
         <Form addMessage={this.addMessage} />
 
         <h2 className="heading"> Child components: </h2>
-        
+
         {this.state.messageToChildren.map( (message, i) => (
-          <Note fromParent={message} indexNum={i+1} key={i}/>
+          <Note
+            fromParent={message}
+            index={i}
+            key={i}
+            deleteMessage={this.deleteMessage}
+          />
         ))}
 
       </div>
