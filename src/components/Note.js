@@ -12,12 +12,21 @@ function Note(props) {
   }
 
   return (
-    <div className="note">
+    <div className={"note "+(props.edit !== props.index || "active")}>
       <span style={style}> Message from parent: </span>
       <span> "{props.fromParent}" </span>
-      <button className="remove-btn"
-        onClick={()=>props.deleteMessage(props.index)}
-      >✕</button>
+
+      { props.edit === "new" &&
+        <div className="container-btn">
+          <button className="btn remove-btn"
+            onClick={()=>props.deleteMessage(props.index)}
+          >✕</button>
+          <button className="btn update-btn"
+            onClick={()=>props.updateMessage(props.index, props.fromParent)}
+          >&#x270e;</button>
+        </div>
+      }
+
     </div>
   )
 
