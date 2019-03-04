@@ -1,10 +1,12 @@
 body {
   background-color: #eee;
+  max-width: 700px;
 }
 .heading {
   text-align: center;
   color: #444;
 }
+
 .note {
   font-size: 20px;
   background-color: #666;
@@ -12,4 +14,17 @@ body {
   border-radius: 2px;
   padding: 5px;
   color: #eee;
+}
+
+
+.form * {
+  font-size: 25px;
+  margin: 3px;
+  padding: 3px 8px 3px 8px;
+}
+.form {
+  margin: 10px;
+}
+.form input {
+  width: 500px;
 }
