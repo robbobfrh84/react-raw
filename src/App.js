@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 /* styles */
-import "./style.css"
+import "./styles/main.css"
 
 /* navBar pages */
 import NavBar from "./components/NavBar"
@@ -32,7 +32,7 @@ function NavPages(props) {
     <div>
       <NavBar title={props.pages.title}/>
       <Switch>
-        <Route exact path="/(|home|landing)/" component={Home} />
+        <Route path="/(|home|landing)/" component={Home} />
         <Route exact path="/notes" component={Notes} />
         <Route path="*" component={Default} />
       </Switch>

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import "../../styles/navButtons.css"
 import "./style.css"
 
 function NavBar(props) {
@@ -7,7 +8,7 @@ function NavBar(props) {
   const page = window.location.pathname
 
   return (
-    <div className="navBar">
+    <div className="navBar navButtons">
       {props.title}
       <div className="right-nav">
         <button className={["/","/home"].includes(page) ? "link current" : "link"}>
