@@ -1,8 +1,12 @@
 import React from "react"
 
-function Full() {
+function Full({history}) {
+
   return (
-    <h1> Full Page </h1>
+    <div>
+      <h1> Full Page </h1>
+      <button onClick={history.goBack}> Go Back </button>
+    </div>
   )
 }
 

@@ -8,6 +8,7 @@ import "./style.css"
 import NavBar from "./components/NavBar"
 import Home from "./components/pages/Home"
 import Notes from "./components/pages/Notes"
+import Default from "./components/pages/Default"
 
 /* Full pages */
 import Full from "./components/pages/Full"
@@ -30,8 +31,11 @@ function NavPages(props) {
   return (
     <div>
       <NavBar title={props.pages.title}/>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/notes" component={Notes} />
+      <Switch>
+        <Route exact path="/(|home|landing)/" component={Home} />
+        <Route exact path="/notes" component={Notes} />
+        <Route path="*" component={Default} />
+      </Switch>
     </div>
   )
 }
