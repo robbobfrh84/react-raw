@@ -1,0 +1,13 @@
+.navBar {
+  font-size: 20px;
+  color: cornflowerblue;
+  font-weight: bold;
+}
+.right-nav {
+  float: right;
+}
+.navBar button {
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 5px;
+}

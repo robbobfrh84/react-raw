@@ -11,7 +11,7 @@
   height: 30px;
   line-height: 30px;
 }
-.note .active {
+.note.active {
   border: 4px solid brown;
   opacity: 0.35;
 }
