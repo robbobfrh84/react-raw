@@ -1,8 +1,7 @@
+* {
+  font-family: sans-serif;
+  font-weight: lighter;
+}
 body {
   background-color: #eee;
-  max-width: 700px;
-}
-.heading {
-  text-align: center;
-  color: #444;
 }

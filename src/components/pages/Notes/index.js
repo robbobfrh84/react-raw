@@ -1,11 +1,11 @@
 import React from "react"
-import Note from "../Note"
-import Form from "../Form"
+import Note from "../../Note"
+import Form from "../../Form"
+import "./style.css"
 
 class Notes extends React.Component {
 
   state = {
-    title: "Hello React App!",
     messageToChildren: [
       " 🌟 Good luck out there my child 🥰 ",
       "...Oh, I guess you too 😕 ...",
@@ -13,11 +13,6 @@ class Notes extends React.Component {
     ],
     currentMessage: "",
     edit: "new",
-    titleStyle: {
-      color: "cornflowerblue",
-      margin: 15,
-      fontSize: 35
-    }
   }
 
   addMessage = (message) => {
@@ -48,8 +43,7 @@ class Notes extends React.Component {
 
   render() {
     return (
-      <div>
-        <div style={this.state.titleStyle}>{this.state.title}</div>
+      <div className="notes">
 
         <Form
           addMessage={this.addMessage}
