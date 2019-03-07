@@ -10,4 +10,16 @@
   cursor: pointer;
   font-size: 20px;
   margin-right: 5px;
+  border: none;
+}
+.navBar .link {
+  background-color: rgba(0,0,0,0.3);
+}
+.navBar .link a {
+  text-decoration: none;
+  color: white;
+}
+.navBar .current {
+  background-color: rgba(0,0,0,0.5);
+  border-bottom: 4px solid #444;
 }
