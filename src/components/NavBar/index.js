@@ -2,6 +2,7 @@ import React from "react"
 import "./style.css"
 
 function NavBar(props) {
+
   return (
     <div className="navBar">
       {props.title}

@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 /* styles */
 import "./style.css"
@@ -10,29 +10,30 @@ import Home from "./components/pages/Home"
 import Notes from "./components/pages/Notes"
 
 /* Full pages */
-import Full from "./components/pages/Notes"
+import Full from "./components/pages/Full"
 
 function App() {
-
   const pages = {
     title: "React-Raw"
   }
-
   return (
     <BrowserRouter>
-      <div>
-        <div>
-          <NavBar title={pages.title}/>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/notes" component={Notes} />
-        </div>
-        <div>
-          <Route exact path="/full" component={Full} />
-        </div>
-      </div>
+      <Switch>
+        <Route exact path="/full" component={Full} />
+        <Route path="/" render={() => <NavPages pages={pages} />} />
+      </Switch>
     </BrowserRouter>
   )
-  
+}
+
+function NavPages(props) {
+  return (
+    <div>
+      <NavBar title={props.pages.title}/>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/notes" component={Notes} />
+    </div>
+  )
 }
 
 export default App
