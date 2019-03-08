@@ -8,6 +8,7 @@ import "./styles/main.css"
 import NavBar from "./components/NavBar"
 import Home from "./components/pages/Home"
 import Notes from "./components/pages/Notes"
+import MarsAPI from "./components/pages/MarsAPI"
 import Default from "./components/pages/Default"
 
 /* Full pages */
@@ -34,6 +35,7 @@ function NavPages(props) {
       <Switch>
         <Route path="/(|home|landing)/" component={Home} />
         <Route exact path="/notes" component={Notes} />
+        <Route exact path="/marsAPI" component={MarsAPI} />
         <Route path="*" component={Default} />
       </Switch>
     </div>

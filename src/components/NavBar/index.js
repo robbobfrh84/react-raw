@@ -17,6 +17,9 @@ function NavBar(props) {
         <button className={page === "/notes" ? "link current" : "link"}>
           <Link to="/notes"> Notes </Link>
         </button>
+        <button className={page === "/marsapi" ? "link current" : "link"}>
+          <Link to="/marsapi"> Mars API </Link>
+        </button>
         <button className={page === "/full" ? "link current" : "link"}>
           <Link to="/full"> Full </Link>
         </button>
