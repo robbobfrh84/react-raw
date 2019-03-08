@@ -54,6 +54,9 @@ function NavPages(props) {
         <Route exact path="/notes"
           render={route => <Notes {...route} rootData={props.rootData}/>}
         />
+        <Route exact path="/marsapi"
+          render={route => <MarsAPI {...route} rootData={props.rootData}/>}
+        />
         <Route path="*" component={Default} />
       </Switch>
     </div>
