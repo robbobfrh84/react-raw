@@ -6,25 +6,20 @@ import "./style.css"
 class Notes extends React.Component {
 
   state = {
-    messageToChildren: [
-      " 🌟 Good luck out there my child 🥰 ",
-      "...Oh, I guess you too 😕 ...",
-      "...Wait, I have another child 😳? ..."
-    ],
+    rootData: this.props.rootData,
+    messageToChildren: this.props.rootData.pageData.notes.messageToChildren,
     currentMessage: "",
     edit: "new",
   }
 
   addMessage = (message) => {
-    const arr = [...this.state.messageToChildren]
-    arr.push(message)
-    this.setState({ messageToChildren: arr })
+    this.state.messageToChildren.push(message)
+    this.state.rootData.updatePageData('notes', this.state)
   }
 
   deleteMessage = (index) => {
-    const arr = [...this.state.messageToChildren]
-    arr.splice(index, 1)
-    this.setState({ messageToChildren: arr })
+    this.state.messageToChildren.splice(index, 1)
+    this.state.rootData.updatePageData('notes', this.state)
   }
 
   updateMessage = (index, message) => {
@@ -35,10 +30,10 @@ class Notes extends React.Component {
     this.setState({ edit: "new", currentMessage: "" })
   }
 
-  saveMessage = (updatedMessage) => {
-    const arr = [...this.state.messageToChildren]
-    arr[this.state.edit] = updatedMessage
-    this.setState({ messageToChildren: arr, edit: "new", currentMessage: ""  })
+  saveMessage = (updatedMessage, obj = {...this.state}) => {
+    obj.messageToChildren[this.state.edit] = updatedMessage
+    this.setState({ messageToChildren: obj.messageToChildren, edit: "new", currentMessage: ""  })
+    this.state.rootData.updatePageData('notes', obj)
   }
 
   render() {
