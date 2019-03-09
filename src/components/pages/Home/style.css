@@ -1,0 +1,13 @@
+.home .subpage-content {
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 500px;
+  background-color: #ccc;
+}
+.home .link {
+  width: 100%;
+}
+.home .current {
+  background-color: rgba(0,0,0,0);
+  color: rgb(40, 106, 209);
+}

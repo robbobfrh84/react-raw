@@ -8,7 +8,7 @@
   border-radius: 2px;
   padding: 5px;
   color: #eee;
-  height: 30px;
+  height: 40px;
   line-height: 30px;
 }
 .note.active {
@@ -17,7 +17,7 @@
 }
 .note .container-btn {
   position: absolute;
-  top: 5px;
+  top: 0px;
   right: 5px;
 }
 .note .btn {
@@ -25,7 +25,8 @@
   font-size: 25px;
   background-color: #888;
   height: 30px;
-  padding-left: 6px;
+  line-height: 33px;
+  padding: 5px;
   padding-top: 0px;
   border-radius: 2px;
   border: none;
