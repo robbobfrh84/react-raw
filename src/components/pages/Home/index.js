@@ -1,22 +1,22 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import About from "./About"
-import More from "./More"
-import "../../styles/navButtons.css"
-import { Jumbotron, Button, Tab, Row, Col, Nav } from 'react-bootstrap'
+import { Link, Route } from "react-router-dom"
+import About from "../About"
+import More from "../More"
+import "./style.css"
+import { Jumbotron, Button, Tab, Row, Col } from 'react-bootstrap'
 
 function Home({match, rootData}) {
 
   const noteCount = rootData.pageData.notes.messageToChildren.length
-  // const page = match.url === "/" ? "/home" : match.url
-  // const path = window.location.pathname
+  const page = match.url === "/" ? "/home" : match.url
+  const path = window.location.pathname
 
   const emoji = {
     thumb: "👍"
   }
 
   return (
-    <div className="navButtons">
+    <div className="home">
       <Jumbotron>
         <h1> Home Page: with Bootstrap Jumbotron </h1>
         <h3> Total Notes: {noteCount} </h3>
@@ -34,35 +34,32 @@ function Home({match, rootData}) {
           <Link to={'/marsapi'}>
             <Button variant="primary"> Mars API </Button>
           </Link>
-
         </p>
       </Jumbotron>
 
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
         <Row>
           <Col sm={3}>
-            <Nav variant="pills" className="flex-column">
-              <Nav.Item>
-                <Nav.Link eventKey="first">
-                  About
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="second">
-                  More
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
+
+            <Link to={page+"/about"}>
+              <Button variant="primary"
+                className={["/","/home","/home/about"].includes(path) ? "link current" : "link"}
+              > About </Button>
+            </Link>
+
+
+            <Link to={page+"/more"}>
+              <Button variant="primary"
+                className={page+'/more' === path ? "link current" : "link"}
+              > More </Button>
+            </Link>
+
           </Col>
-          <Col sm={9}>
-            <Tab.Content>
-              <Tab.Pane eventKey="first">
-                <About />
-              </Tab.Pane>
-              <Tab.Pane eventKey="second">
-                <More />
-              </Tab.Pane>
-            </Tab.Content>
+          <Col sm={9} className="subpage-content">
+
+            <Route exact path="/(|home|home/about)/" component={About} />
+            <Route exact path={page+'/more'} component={More} />
+
           </Col>
         </Row>
       </Tab.Container>

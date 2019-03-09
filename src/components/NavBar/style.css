@@ -1,8 +1,27 @@
-.navBar {
-  font-size: 20px;
+.navButtons .title {
+  margin: 0px 10px;
   color: cornflowerblue;
+  text-decoration: none;
   font-weight: bold;
 }
-.right-nav {
-  float: right;
+.navButtons .link {
+  margin: 0px;
+  margin-top: -1px;
+  text-decoration: none;
+  padding: 10px;
+  border-top: 1px solid rgba(0,0,150,0.1);
+}
+.navButtons .full {
+  padding: 0px 10px;
+  margin-top: -1px;
+  border-top: 1px solid rgba(0,0,150,0.1);
+}
+.navButtons .current {
+  line-height: 45px;
+  height: 50px;
+  margin: 0px;
+  margin-top: -1px;
+  padding: 0px 10px;
+  background-color: rgba(0,0,0,0.05);
+  border-bottom: 3px solid rgba(0,0,150,0.4);
 }

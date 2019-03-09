@@ -1,32 +1,38 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "../../styles/navButtons.css"
 import "./style.css"
+import "../../styles/bootstrap.css"
+import { Navbar, Nav, Button } from 'react-bootstrap'
 
 function NavBar(props) {
 
   const page = window.location.pathname
 
   return (
-    <div className="navBar navButtons">
-      <Link to="/"> {props.title} </Link>
-      <div className="right-nav">
-        <button className={["/","/home"].includes(page) ? "link current" : "link"}>
-          <Link to="/home"> Home </Link>
-        </button>
-        <button className={page === "/notes" ? "link current" : "link"}>
-          <Link to="/notes"> Notes </Link>
-        </button>
-        <button className={page === "/marsapi" ? "link current" : "link"}>
-          <Link to="/marsapi"> Mars API </Link>
-        </button>
-        <button className={page === "/full" ? "link current" : "link"}>
-          <Link to="/full"> Full </Link>
-        </button>
-      </div>
-      <hr />
-    </div>
+    <Navbar collapseOnSelect expand="lg" className="navButtons">
+      <Navbar.Brand>
+        <Link to="/" className="title"> {props.title} </Link>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+        <Nav>
+          <Link to="/home"
+            className={page === "/home" ? "link current" : "link"}
+          > Home </Link>
+          <Link to="/notes"
+            className={page === "/notes" ? "link current" : "link"}
+          > Notes </Link>
+          <Link to="/marsapi"
+            className={page === "/marsapi" ? "link current" : "link"}
+          > Mars API </Link>
+          <Link to="/full" className="full">
+            <Button variant="outline-success"> Full </Button>
+          </Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   )
+
 }
 
 export default NavBar

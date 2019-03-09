@@ -91,3 +91,56 @@ Your `package.json` should now look similar to the code below.
   - Just type `y` + [enter] for the detected browser.
 
 If your react app was created successfully, your browser should load the basic raw content added within the code from above.
+
+---
+
+# react-raw order of development
+
+Branch Names:
+* 1-basic-react-app
+* 2-add-static-components
+* 3-loop-components
+* 4-add-css-and-localized-css
+* 5-make-stateful-component
+* 6-stateful-events
+* 7-stateful-remove-array
+* 8-update-stateful-list
+* 9-component-css
+* 10-react-router
+  * `npm install react-dom-router`
+* 11-router-links
+* 12-subpages
+* 13-set-data-to-root
+* 14-add-axios-api
+  * API example: https://api.nasa.gov/api.html#MarsPhotos
+  * `npm install axios`
+* 15-build-to-deploy
+  * New NPM `"script"`: `"build":"react-script build"`
+  * `npm run build` > builds `build` folder for deployment
+* 16-react-bootstrap (https://react-bootstrap.github.io/components/buttons/)
+  * `npm install react-bootstrap bootstrap`
+  * Jumbotron: https://react-bootstrap.netlify.com/components/jumbotron/#jumbotron
+  * Not added option (for only adding bootstrap you use):
+    * https://getbootstrap.com/docs/3.4/customize/
+* 17-bootstrap-navbar
+  * Also: fixed subpage on home (about/more)
+
+### To Add
+- ? bootstrap-card
+- ? bootstrap-loader
+- set root to build files and put all current root in "development" folder
+- Steps for development / `git clone ...` & adding branches.
+- remove issues.  
+
+### Steps done on `mern-demo` repository.
+- basic-node-express-react
+- add-mongodb
+- get-seed-db
+
+### WATER ...
+- heroku launch
+- Google Sheet DB for analytics/admin
+- gcloud migrate
+- native login
+- google login
+- storage bucket
