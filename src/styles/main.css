@@ -4,4 +4,11 @@
 }
 body {
   background-color: #eee;
+  padding: 10px;
+}
+
+/* BOOTSTRAP */
+
+.jumbotron {
+  background-color: #ccc;
 }

@@ -9,7 +9,7 @@ function NavBar(props) {
 
   return (
     <div className="navBar navButtons">
-      {props.title}
+      <Link to="/"> {props.title} </Link>
       <div className="right-nav">
         <button className={["/","/home"].includes(page) ? "link current" : "link"}>
           <Link to="/home"> Home </Link>
