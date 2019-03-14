@@ -5,7 +5,7 @@ const APIKEY = "api_key=NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";
 const Photos = "/photos?sol=";
 
 export default {
-  __API_ON: false,
+  __API_ON: true, // off will block request for landing page ONLY.
   photos: function(sol, page) {
     const url = NasaMarsURL + Photos + sol + "&page="+ page +"&"+ APIKEY
     return axios.get(url)

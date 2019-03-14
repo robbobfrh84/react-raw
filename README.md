@@ -13,9 +13,9 @@ NOTE: You'll be on the "master" branch (final step of the guide). So You'll like
 git branch -a | grep -v HEAD | perl -ne 'chomp($_); s|^\*?\s*||; if (m|(.+)/(.+)| && not $d{$2}) {print qq(git branch --track $2 $1/$2\n)} else {$d{$_}=1}' | csh -xfs
 ```
 
-- This will create a clone of every branch of the project. 
-- So, now, you can simply $`git branch` to see all the branches(steps) 
-- `git checkout 1-basic-react-app` to see the starting code of the project. 
+- This will create a clone of every branch of the project.
+- So, now, you can simply $`git branch` to see all the branches(steps)
+- `git checkout 1-basic-react-app` to see the starting code of the project.
 - OR, follow below to build yourself🌟
 
 ----
@@ -141,44 +141,3 @@ Branch Names:
     * https://getbootstrap.com/docs/3.4/customize/
 * 17-bootstrap-navbar
   * Also: fixed subpage on home (about/more)
-
-### To Add
-
-- ? Set About / More to Global Anchors.
-  - PUSH CHANGES! > 17-landing-redesign.
-
-- ? bootstrap-loader (do from differnt branch and add basic on marsAPI)
-  - Go back and just create off of branch 17 (don't merge to master)
-
-- ? landing-page-api-redesign.
-  - add footer
-
-- ? Convert to SCSS / Theming
-  - boostrap theming: https://getbootstrap.com/docs/4.0/getting-started/theming/
-  - Adding a Sass styleshhet to react: https://facebook.github.io/create-react-app/docs/adding-a-sass-stylesheet
-  - Sass basics: https://sass-lang.com/guide
-  - start out by changing primary to our red!
-  - Test overrides cross component.
-    - NOTE infoSpan's declaration of h3 that overrides home's (more/about/mars) h3
-  - This is where you can remove any global css ('main'/'bootstrap')
-
-
-- refactor-design
-  - bootstrap-card
-  - wireframe (breakdown steps from here.)
-- set root to build files and put all current root in "development" folder
-- Steps for development / `git clone ...` & adding branches.
-- remove issues.  
-
-### Steps done on `mern-demo` repository.
-- basic-node-express-react
-- add-mongodb
-- get-seed-db
-
-### WATER ...
-- heroku launch
-- Google Sheet DB for analytics/admin
-- gcloud migrate
-- native login
-- google login
-- storage bucket
