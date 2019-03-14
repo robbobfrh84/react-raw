@@ -1,6 +1,12 @@
 # react-raw
 Stripped-down React app with step by step build-outs.
 
+### See in action
+- clone this repository 
+- $`cd react-raw`
+- $`npm install`
+- $`npm start`
+
 ----
 # Getting Started: Minimal Basic React App
 
