@@ -19,18 +19,13 @@ class Home extends React.Component {
         page: props.match.url === "/" ? "/home" : props.match.url,
         path: window.location.pathname,
         scrollTopInfoBox: React.createRef()
-
      }
-  }
-
-  componentDidUpdatee(){
-    console.log('updatee')
+     this.scrollToPages = ['/home/about','/home/more','/home/mars']
   }
 
   componentDidMount() {
-    if (this.state.path !== '/home') {
-      // this.state.scrollTopInfoBox.current.scrollIntoView({behavior: "smooth"})
-      this.state.scrollTopInfoBox.current.scrollIntoView(true)
+    if (this.scrollToPages.includes(this.state.path)) {
+      this.state.scrollTopInfoBox.current.scrollIntoView(true) // option that got stuck before hitting bottom >>> this.state.scrollTopInfoBox.current.scrollIntoView({behavior: "smooth"})
     }
   }
 
