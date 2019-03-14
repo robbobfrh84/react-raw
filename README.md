@@ -2,10 +2,17 @@
 Stripped-down React app with step by step build-outs.
 
 ### See in action
-- clone this repository 
-- $`cd react-raw`
+Start by cloning this repository and `cd` into it.
 - $`npm install`
-- $`npm start`
+- $`npm start` > should be available locally at `localhost:3000`
+
+NOTE: You'll be on the "master" branch (final step of the guide). So You'll likely want to have all the branches to view locally.
+- At the root level of the repo you just cloned, run this script... copy/paste😉
+`git branch -a | grep -v HEAD | perl -ne 'chomp($_); s|^\*?\s*||; if (m|(.+)/(.+)| && not $d{$2}) {print qq(git branch --track $2 $1/$2\n)} else {$d{$_}=1}' | csh -xfs`
+- This will create a clone of every branch of the project. 
+- So, now, you can simply $`git branch` to see all the branches(steps) 
+- `git checkout 1-basic-react-app` to see the starting code of the project. 
+- OR, follow below to build yourself🌟
 
 ----
 # Getting Started: Minimal Basic React App
