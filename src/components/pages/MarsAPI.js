@@ -1,5 +1,6 @@
 import React from "react"
 import API from "../../toolkit/API"
+import Footer from "../Footer"
 
 class MarsAPI extends React.Component {
 
@@ -14,7 +15,7 @@ class MarsAPI extends React.Component {
   }
 
   searchMars(sol, page) {
-    API.search(sol, page)
+    API.photos(sol, page)
       .then(res => this.updateImages(res.data.photos))
       .catch(err => console.log(err));
   }
@@ -54,6 +55,9 @@ class MarsAPI extends React.Component {
             <br /><br />
           </div>
         ))}
+
+        <Footer />
+
       </div>
     )
   }

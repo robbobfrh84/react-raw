@@ -1,8 +1,27 @@
 .home .subpage-content {
   padding: 10px;
   border-radius: 10px;
-  min-height: 500px;
+  min-height: 300px;
   background-color: #ccc;
+}
+.home .row {
+  padding: 10px;
+}
+.home .subpage {
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.home .col-md-3 {
+  padding-left: 0px;
+}
+.home .jumbotron {
+  background-color: aliceblue;
+  color: rgba(128,0,0,0.7);
+  text-align: center;
+  margin: 0px;
+  padding: 10px;
+  margin-top: 80px;
 }
 .home .link {
   width: 100%;
@@ -10,4 +29,11 @@
 .home .current {
   background-color: rgba(0,0,0,0);
   color: rgb(40, 106, 209);
+}
+.home .imageContainer {
+  text-align: center;
+}
+.home .roverSVG {
+  width: 300px;
+  margin: auto;
 }

@@ -1,0 +1,25 @@
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.footer .container {
+  padding: 0px;
+  margin: auto;
+}
+.footer .row {
+  background-color: rgba(0,0,0,0);
+}
+.footer .col-md-1 {
+  margin: 0px;
+  padding: 0px;
+  min-width: 110px;
+  border-radius: 3px;
+  color: #444;
+  margin: auto;
+}
+.footer .col-md-1:hover {
+  background-color: rgba(128,0,0,0.075);
+  color: #444;
+}
+/* color: rgba(128,0,0,0.7); */
