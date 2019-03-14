@@ -1,6 +1,7 @@
 import React from "react"
 import Note from "../../Note"
 import Form from "../../Form"
+import Footer from "../../Footer"
 import "./style.css"
 
 class Notes extends React.Component {
@@ -40,27 +41,33 @@ class Notes extends React.Component {
     return (
       <div className="notes">
 
-        <Form
-          addMessage={this.addMessage}
-          currentMessage={this.state.currentMessage}
-          cancelUpdateMessage={this.cancelUpdateMessage}
-          saveMessage={this.saveMessage}
-          edit={this.state.edit}
-        />
+        <div className="notes-container">
 
-        <h2 className="heading"> Child components: </h2>
-
-        {this.state.messageToChildren.map( (message, i) => (
-          <Note
-            fromParent={message}
-            index={i}
-            key={i}
-            deleteMessage={this.deleteMessage}
-            updateMessage={this.updateMessage}
+          <Form
+            addMessage={this.addMessage}
+            currentMessage={this.state.currentMessage}
+            cancelUpdateMessage={this.cancelUpdateMessage}
             saveMessage={this.saveMessage}
             edit={this.state.edit}
           />
-        ))}
+
+          <h2 className="heading"> Child components: </h2>
+
+          {this.state.messageToChildren.map( (message, i) => (
+            <Note
+              fromParent={message}
+              index={i}
+              key={i}
+              deleteMessage={this.deleteMessage}
+              updateMessage={this.updateMessage}
+              saveMessage={this.saveMessage}
+              edit={this.state.edit}
+            />
+          ))}
+
+        </div>
+
+        <Footer />
 
       </div>
     )

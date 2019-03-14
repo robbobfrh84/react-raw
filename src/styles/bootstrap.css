@@ -11,14 +11,9 @@
 .bg-light {
   background-color: aliceblue !important;
 }
-.jumbotron {
-  background-color: #ccc;
-  margin: 10px;
-}
 .row {
   margin: 10px;
   border-radius: 5px;
-  min-height: 500px;
   padding: 10px 0px;
   background-color: #ddd;
 }

@@ -2,10 +2,12 @@ import React from "react"
 
 function More() {
 
-  const content = "🤔 Idk... here's some More."
-
   return (
-    <h3> {content} </h3>
+    <h3>
+      Lean more about NASA's Curisity rover
+      <a href="https://www.nasa.gov/mission_pages/msl/index.html"> here </a>
+    </h3>
+
   )
 }
 

@@ -1,71 +1,100 @@
 import React from "react"
 import { Link, Route } from "react-router-dom"
 import About from "../About"
+import Mars from "../Mars"
 import More from "../More"
+import Footer from "../../Footer"
+import InfoSpan from "../../InfoSpan"
+import Rover from '../../../images/rover.svg'
+
 import "./style.css"
-import { Jumbotron, Button, Tab, Row, Col } from 'react-bootstrap'
+import { Button, Row, Col, Container, Jumbotron } from 'react-bootstrap'
 
-function Home({match, rootData}) {
+class Home extends React.Component {
 
-  const noteCount = rootData.pageData.notes.messageToChildren.length
-  const page = match.url === "/" ? "/home" : match.url
-  const path = window.location.pathname
+  constructor(props){
+     super(props)
+     this.state = {
+        noteCount: props.rootData.pageData.notes.messageToChildren.length,
+        page: props.match.url === "/" ? "/home" : props.match.url,
+        path: window.location.pathname,
+        scrollTopInfoBox: React.createRef()
 
-  const emoji = {
-    thumb: "👍"
+     }
   }
 
-  return (
-    <div className="home">
-      <Jumbotron>
-        <h1> Home Page: with Bootstrap Jumbotron </h1>
-        <h3> Total Notes: {noteCount} </h3>
-        <p>
-          And, of course we've got some fun filler text that really doesn't do or say anything.
-          But, as long as you don't read it, it looks like it's important, or looks like it could be important.
-          So, if you're still reading this I really don't know why.
-          You probably should have stopped by now. Ok, maybe that was a bit judgemental, maybe you have a good reason,
-          maybe it's just that you like reading. that's cool. {emoji.thumb}
-        </p>
-        <p>
-          <Link to={'/notes'}>
-            <Button variant="primary"> Notes </Button>
-          </Link>
-          <Link to={'/marsapi'}>
-            <Button variant="primary"> Mars API </Button>
-          </Link>
-        </p>
-      </Jumbotron>
+  componentDidUpdatee(){
+    console.log('updatee')
+  }
 
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        <Row>
-          <Col sm={3}>
+  componentDidMount() {
+    if (this.state.path !== '/home') {
+      // this.state.scrollTopInfoBox.current.scrollIntoView({behavior: "smooth"})
+      this.state.scrollTopInfoBox.current.scrollIntoView(true)
+    }
+  }
 
-            <Link to={page+"/about"}>
-              <Button variant="primary"
-                className={["/","/home","/home/about"].includes(path) ? "link current" : "link"}
-              > About </Button>
-            </Link>
+  componentWillReceiveProps(nextProps) {
+    this.setState({path: window.location.pathname})
+  }
 
+  render() {
+    return (
+      <div className="home">
 
-            <Link to={page+"/more"}>
-              <Button variant="primary"
-                className={page+'/more' === path ? "link current" : "link"}
-              > More </Button>
-            </Link>
+        <div className="imageContainer">
+          <img src={Rover} alt="Rover" className="roverSVG"/>
+        </div>
 
-          </Col>
-          <Col sm={9} className="subpage-content">
+        <InfoSpan />
 
-            <Route exact path="/(|home|home/about)/" component={About} />
-            <Route exact path={page+'/more'} component={More} />
+        <Jumbotron fluid>
+          <Container>
+            <h2> Total Human Notes: </h2>
+            <h1> {this.state.noteCount} </h1>
+          </Container>
+        </Jumbotron>
 
-          </Col>
-        </Row>
-      </Tab.Container>
+        <Container className="subpage">
+          <Row>
 
-    </div>
-  )
+            <Col md={3}>
+              <Link to={this.state.page+"/about"}>
+                <Button variant="primary"
+                  className={["/","/home","/home/about"].includes(this.state.path) ? "link current" : "link"}
+                > About </Button>
+              </Link>
+
+              <Link to={this.state.page+"/mars"}>
+                <Button variant="primary"
+                  className={this.state.page+'/mars' === this.state.path ? "link current" : "link"}
+                > Mars </Button>
+              </Link>
+
+              <Link to={this.state.page+"/more"}>
+                <Button variant="primary"
+                  className={this.state.page+'/more' === this.state.path ? "link current" : "link"}
+                > More </Button>
+              </Link>
+            </Col>
+
+            <Col md={9} className="subpage-content">
+              <Route exact path="/(|home|home/about)/" component={About} />
+              <Route exact path={this.state.page+'/mars'} component={Mars} />
+              <Route exact path={this.state.page+'/more'} component={More} />
+            </Col>
+
+          </Row>
+        </Container>
+
+        <div ref={this.state.scrollTopInfoBox}></div>
+
+        <Footer />
+
+      </div>
+    )
+  }
+
 }
 
 export default Home
