@@ -10,21 +10,20 @@ class MarsAPI extends React.Component {
       images: [],
       sol: 1000,
       page: 1,
+      loading: false
     }
-    this.loading = false
   }
 
   componentDidMount() {
-    console.log(API.ON)
     if (!API.BLOCK) this.searchMars(this.state.sol, this.state.page)
   }
 
   searchMars(sol, page) {
-    this.loading = true
+    this.setState({loading: true})
     API.photos(sol, page)
       .then(res => this.updateImages(res.data.photos))
       .catch(err => console.log(err))
-      .finally( () => this.loading = false )
+      .finally( () => this.setState({loading: false}) )
   }
 
   updateImages(arr){
@@ -52,7 +51,7 @@ class MarsAPI extends React.Component {
         <button onClick={this.updateSearch} > Update </button>
         <br />
 
-        {!this.loading &&
+        {this.state.loading &&
           <div className="spinner-border text-primary" role="status">
             <span className="sr-only">Loading...</span>
           </div>

@@ -1,5 +1,7 @@
 ### todo
 
+
+
 - Convert to SCSS / Theming
   - boostrap theming: https://getbootstrap.com/docs/4.0/getting-started/theming/
   - Adding a Sass styleshhet to react: https://facebook.github.io/create-react-app/docs/adding-a-sass-stylesheet
@@ -8,6 +10,7 @@
   - Test overrides cross component.
     - NOTE infoSpan's declaration of h3 that overrides home's (more/about/mars) h3
   - This is where you can remove any global css ('main'/'bootstrap')
+
 
 - refactor-design
   - bootstrap-card
