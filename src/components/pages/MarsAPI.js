@@ -3,20 +3,26 @@ import API from "../../toolkit/API"
 
 class MarsAPI extends React.Component {
 
+  constructor(){
+    super()
+    this.state = {
+      images: [],
+      sol: 1000,
+      page: 1,
+    }
+    this.loading = false
+  }
+
   componentDidMount() {
     this.searchMars(this.state.sol, this.state.page)
   }
 
-  state = {
-    images: [],
-    sol: 1000,
-    page: 1
-  }
-
   searchMars(sol, page) {
+    this.loading = true
     API.search(sol, page)
       .then(res => this.updateImages(res.data.photos))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
+      .finally( () => this.loading = false )
   }
 
   updateImages(arr){
@@ -43,6 +49,13 @@ class MarsAPI extends React.Component {
         />
         <button onClick={this.updateSearch} > Update </button>
         <br />
+
+        {!this.loading &&
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        }
+
         {this.state.images.map( (img, i) => (
           <div key={i} style={{display: "inline-block", margin: 10}}>
             <div>{img.camera.full_name + " #" + img.id}</div>
@@ -54,6 +67,7 @@ class MarsAPI extends React.Component {
             <br /><br />
           </div>
         ))}
+
       </div>
     )
   }
