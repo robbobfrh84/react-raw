@@ -1,7 +1,5 @@
 ### todo
 
-- Bootstrap-loader (from branch 16 on marsAPI)
-
 - Convert to SCSS / Theming
   - boostrap theming: https://getbootstrap.com/docs/4.0/getting-started/theming/
   - Adding a Sass styleshhet to react: https://facebook.github.io/create-react-app/docs/adding-a-sass-stylesheet

@@ -17,7 +17,7 @@ class InfoSpan extends React.Component {
   }
 
   componentDidMount(){
-    API.__API_ON ? this.allPhotos("manifest") : this.turnAllLoadersOff()
+    !API.BLOCK ? this.allPhotos("manifest") : this.turnAllLoadersOff()
   }
 
   allPhotos(which) {
