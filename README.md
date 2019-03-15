@@ -141,3 +141,9 @@ Branch Names:
     * https://getbootstrap.com/docs/3.4/customize/
 * 17-bootstrap-navbar
   * Also: fixed subpage on home (about/more)
+* 18-loading-icon
+* 19-landing-redesign-and-api
+  * Big design change with integration of API on home page.
+* 20-sass
+  * `npm install node-sass`
+  * also placed development folder in build for github pages to use. 

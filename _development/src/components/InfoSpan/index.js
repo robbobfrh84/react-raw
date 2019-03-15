@@ -3,7 +3,7 @@ import API from "../../toolkit/API"
 import Funcs from "../../toolkit/myfuncs"
 
 import { Container, Row, Col } from "react-bootstrap"
-import "./style.css"
+import "./style.sass"
 
 class InfoSpan extends React.Component {
 
