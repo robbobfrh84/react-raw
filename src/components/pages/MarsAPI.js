@@ -4,20 +4,27 @@ import Footer from "../Footer"
 
 class MarsAPI extends React.Component {
 
-  componentDidMount() {
-    this.searchMars(this.state.sol, this.state.page)
+  constructor(){
+    super()
+    this.state = {
+      images: [],
+      sol: 1000,
+      page: 1,
+    }
+    this.loading = false
   }
 
-  state = {
-    images: [],
-    sol: 1000,
-    page: 1
+  componentDidMount() {
+    console.log(API.ON)
+    if (!API.BLOCK) this.searchMars(this.state.sol, this.state.page)
   }
 
   searchMars(sol, page) {
+    this.loading = true
     API.photos(sol, page)
       .then(res => this.updateImages(res.data.photos))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
+      .finally( () => this.loading = false )
   }
 
   updateImages(arr){
@@ -44,6 +51,13 @@ class MarsAPI extends React.Component {
         />
         <button onClick={this.updateSearch} > Update </button>
         <br />
+
+        {!this.loading &&
+          <div className="spinner-border text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        }
+
         {this.state.images.map( (img, i) => (
           <div key={i} style={{display: "inline-block", margin: 10}}>
             <div>{img.camera.full_name + " #" + img.id}</div>
