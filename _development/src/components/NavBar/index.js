@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "./style.css"
-import "../../styles/bootstrap.css"
+import "./style.sass"
 import { Navbar, Nav, Button } from 'react-bootstrap'
 
 function NavBar(props) {
@@ -26,7 +25,7 @@ function NavBar(props) {
             className={page === "/marsapi" ? "link current" : "link"}
           > Mars API </Link>
           <Link to="/full" className="full">
-            <Button variant="outline-success"> Full </Button>
+            <Button variant="outline-primary"> Full </Button>
           </Link>
         </Nav>
       </Navbar.Collapse>
